@@ -34,13 +34,17 @@ app.factory('providerService', function($resource){
 
 app.controller('mainController', function( $scope, $rootScope){
 	$scope.providers = [
+        {"name" : "1"},
+        {"name" : "2"},
+        {"name" : "3"},
         {
           "name" : "KBO",
+          "operationState" : 0,
           "cameras" : [
             {
               "name" : "cam0",
               "operationMode" : "2",
-              "operationState" : 4,
+              "operationState" : 0,
 
             },
             {
@@ -52,16 +56,16 @@ app.controller('mainController', function( $scope, $rootScope){
             "date" : "2015-06-01T16:53:03.772Z"
         },
         {
-          "_id" : "556c8e67fdc50864040b29b2",
           "name" : "KBU",
+          "operationState" : 4,
           "cameras" : [
             {
-              "name" : "cam0",
+              "name" : "cam2",
               "operationMode" : "2",
               "operationState" : 4,
             },
             {
-              "name" : "cam1",
+              "name" : "cam3",
               "operationMode" : "2",
               "operationState" : "4",
             }],
