@@ -24,9 +24,11 @@
 					
 					<ul class="nav nav-sidebar">
 						<li><label>Search: <input ng-model="searchText"></label></li>
-						<li ng-class="{ 'active' : selectedProvider.name == provider.name }"
+						<li 
+							ng-class="{ 'active' : selectedProvider.name == provider.name }"
 							ng-repeat="provider in providers  |  filter:searchText | orderBy:'name' " 
-							ng-click="setValue(provider)" >{{provider.name}}</li>
+							ng-click="setValue(provider)" ><a href="#">{{provider.name}}</a></li>
+							
 					</ul>	
 				</div>	
 				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -43,7 +45,8 @@
 		
 							</thead>
 							<tbody>
-								<tr ng-repeat="camera in selectedProvider.cameras">
+								<tr ng-class="{ 'danger': camera.operationState != 4 }"
+									ng-repeat="camera in selectedProvider.cameras">
 									<td><i class="fa fa-video-camera"></i></td>
 									<td>{{camera.name}}</td>
 									<td>{{camera.operationState}}</td>
