@@ -19,10 +19,12 @@
 		</nav>
 		<div class="container-fluid" >
 			<div class="row">
-				<div class="col-sm-3 col-md-2 sidebar">
+				<div class="col-sm-3 col-md-3 sidebar">
+					
 					<ul class="nav nav-sidebar">
+						<li><label>Search: <input ng-model="searchText"></label></li>
 						<li ng-class="{ 'active' : selectedProvider.name == provider.name }"
-							ng-repeat="provider in providers | orderBy:'name' " 
+							ng-repeat="provider in providers  |  filter:searchText | orderBy:'name' " 
 							ng-click="setValue(provider)" >{{provider.name}}</li>
 					</ul>	
 				</div>	
